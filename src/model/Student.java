@@ -1,22 +1,36 @@
+package model;
+
 public class Student {
-	private String name;
-	private String answersStudent;
+	private final String name;
+	private final String answers;
+	private int score;
 	
-	public Student(String name, String answersStudent) {
+	public Student(String name, String answers) {
 		this.name = name;
-		this.answersStudent = answersStudent;
+		this.answers = answers;
+		this.score = 0;
+	}
+	
+	public void calculateScore(String answerKey) {
+		if (answers.equals("VVVVVVVVVV") || answers.equals("FFFFFFFFFF")) {
+			score = 0;
+			return;
+		}
+		
+		int hits = 0;
+		for (int i = 0; i < 10; i++) {
+			if (answers.charAt(i) == answerKey.charAt(i)) {
+				hits++;
+			}
+		}
+		score = hits;
 	}
 	
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getAnswersStudent() {
-		return answersStudent;
-	}
-	public void setAnswersStudent(String answersStudent) {
-		this.answersStudent = answersStudent;
+	
+	public int getScore() {
+		return score;
 	}
 }
