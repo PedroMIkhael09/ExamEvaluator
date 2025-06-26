@@ -1,5 +1,8 @@
+import controller.AppController;
+
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Hello, ExamEvaluator!");
+		AppController appController = new AppController();
+		appController.createMenu();
 	}
 }
