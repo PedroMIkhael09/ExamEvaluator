@@ -4,6 +4,7 @@ public class Subject {
 	
 	public Subject(String name) {
 		this.name = name;
+		this.students = new ArrayList<>;
 		
 	}
 	
