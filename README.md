@@ -1,62 +1,57 @@
-# ExamEvaluator
-# Sistema de Avaliação de Alunos
+# Student Evaluation System
 
-Este projeto foi desenvolvido para a disciplina de Programação Orientada a Objetos. Trata-se de um sistema em Java que permite o gerenciamento das respostas de provas objetivas de alunos, com geração automática de resultados e relatórios.
+This project was developed for the Object-Oriented Programming course. It is a Java-based system that manages students' multiple-choice test answers, automatically generating results and reports.
 
-## Descrição
+## Description
 
-A aplicação permite que o usuário (professor) cadastre disciplinas, insira alunos e suas respostas a uma prova de 10 questões do tipo verdadeiro ou falso, e em seguida, com base em um gabarito oficial, gere relatórios com a nota de cada aluno e a média da turma.
+The application allows the user (professor) to create subjects, register students and their answers to a 10-question true/false exam, and then, based on an official answer key, generate reports showing each student's score and the class average.
 
-Os arquivos são organizados em pastas por disciplina e os relatórios podem ser visualizados diretamente na tela e salvos em arquivos de texto.
+All files are organized into folders by subject, and reports can be viewed directly in the console or saved as text files.
 
-## Funcionalidades
+## Features
 
-- Criação de disciplinas e armazenamento das respostas dos alunos.
-- Cadastro de qualquer quantidade de alunos por disciplina.
-- Validação das respostas (apenas 10 caracteres contendo V ou F).
-- Registro das respostas em arquivo.
-- Geração do gabarito oficial da prova.
-- Cálculo da nota de cada aluno.
-- Penalização automática para respostas inteiramente marcadas como V ou F.
-- Geração de dois relatórios:
-  - Um ordenado por nome dos alunos.
-  - Outro ordenado pela nota, com a média final da turma ao final.
-- Exibição dos resultados no console.
+- Creation of subjects and storage of student answers.
+- Support for registering any number of students per subject.
+- Validation of answers (must be exactly 10 characters: only 'V' or 'F').
+- Persistence of responses in a file.
+- Generation of the official answer key.
+- Calculation of each student's score.
+- Automatic penalty if all answers are marked 'V' or all 'F'.
+- Generation of two reports:
+  - One sorted by student name.
+  - One sorted by score, with the class average at the end.
+- Display of results in the console.
 
-## Estrutura do Projeto
+## Project Structure
 
-O projeto está organizado da seguinte forma:
+The project is organized as follows:
 
 - `model/`
-  - `Student.java`: representa um aluno, contendo nome, respostas e nota.
-  - `Subject.java`: representa uma disciplina, contendo os alunos e o gabarito.
-  
+  - `Student.java`: represents a student, containing name, answers, and score.
+  - `Subject.java`: represents a subject, containing students and the answer key.
+
 - `controller/`
-  - `AppController.java`: responsável pela interação com o usuário e coordenação geral da aplicação.
+  - `AppController.java`: responsible for handling user interaction and coordinating the application.
 
-- `Main.java`: ponto de entrada da aplicação.
+- `Main.java`: entry point of the application.
 
-Durante a execução, uma pasta `data/` será criada, contendo subpastas com os dados de cada disciplina.
+During execution, a `data/` folder is created, with subfolders for each subject.
+
+## How to Run
+
+Swtich to develop branch to run the Main.java.
+
+## Example File Structure
+
 ```
 data/
-└── Matematica/
+└── Math/
     ├── student_answers.txt
     ├── answer_key.txt
     ├── results_by_name.txt
     └── results_by_score.txt
 ```
 
-## Conceitos Utilizados
+## Notes
 
-O projeto foi desenvolvido utilizando os princípios de Programação Orientada a Objetos, com foco em:
-
-- **Encapsulamento**: cada classe controla seu próprio estado e comportamento.
-- **Responsabilidade única**: as classes possuem funções bem definidas.
-- **Separação de responsabilidades**: a lógica de controle (fluxo da aplicação) está separada da lógica de domínio (modelo de dados).
-
-A classe `AppController` também pode ser vista como uma aplicação do padrão de projeto *Facade*, pois concentra e simplifica a interação com o sistema, encapsulando operações mais complexas de leitura, escrita e processamento dos dados.
-
-
-## Observações
-
-Este projeto tem fins acadêmicos e foi desenvolvido para fins de prática e avaliação dos conceitos de POO. A estrutura pode ser expandida com novas funcionalidades, como exportação em outros formatos ou interface gráfica.
+This is an academic project developed for learning and practicing OOP concepts. The system can be expanded with new features, such as exporting in different formats or implementing a graphical user interface.
